@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CanActivate, RouterModule, Routes } from '@angular/router';
 import { CalculatorComponent } from './calculator/calculator.component';
 
-class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
   canActivate() {
     return true;
   }
 }
 
 const routes: Routes = [
-  { path:  '', canActivate: [AuthGuard], component:  CalculatorComponent}
+  { path: '', canActivate: [AuthGuard], component: CalculatorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
