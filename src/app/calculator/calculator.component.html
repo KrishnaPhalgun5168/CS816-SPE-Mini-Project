@@ -1,1 +1,205 @@
-<p>calculator works!</p>
+<div class="calc-surface">
+  <div class="calc-box">
+    <div class="calculator container-fluid">
+      <h1 class="text-center">
+        CS 816 SPE Mini Project: Scientific Calculator with DevOps
+      </h1>
+      <div class="column">
+        <div class="col-sm p-1">
+          <div class="row">
+            <div class="col-sm">
+              <div class="input-group">
+                <div class="form-control text-lg-right" type="text">
+                  {{ input }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height: 10px; width: 100%; clear: both"></div>
+        <div class="col-sm p-1">
+          <div class="row">
+            <div class="col-sm-6">
+              <button
+                class="btn btn-lg btn-danger col-sm"
+                type="button"
+                (click)="allClear()"
+              >
+                C
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-warning col-sm"
+                type="button"
+                (click)="clear()"
+              >
+                ⌫
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-primary col-sm"
+                type="button"
+                (click)="pressOperator('^')"
+              >
+                ^
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm p-1">
+          <div class="row">
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('7')"
+              >
+                7
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('8')"
+              >
+                8
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('9')"
+              >
+                9
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-primary col-sm"
+                type="button"
+                (click)="pressOperator('√')"
+              >
+                √
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm p-1">
+          <div class="row">
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('4')"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('5')"
+              >
+                5
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('6')"
+              >
+                6
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-primary col-sm"
+                type="button"
+                (click)="pressOperator('!')"
+              >
+                !
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm p-1">
+          <div class="row">
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('1')"
+              >
+                1
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('2')"
+              >
+                2
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('3')"
+              >
+                3
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-primary col-sm"
+                type="button"
+                (click)="pressOperator('ln')"
+              >
+                ln
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm p-1">
+          <div class="row">
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('.')"
+              >
+                .
+              </button>
+            </div>
+            <div class="col-sm-3">
+              <button
+                class="btn btn-lg btn-outline-secondary col-sm"
+                type="button"
+                (click)="pressNum('0')"
+              >
+                0
+              </button>
+            </div>
+            <div class="col-sm-6">
+              <button
+                class="btn btn-lg btn-success col-sm"
+                type="button"
+                (click)="getAnswer()"
+              >
+                =
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
