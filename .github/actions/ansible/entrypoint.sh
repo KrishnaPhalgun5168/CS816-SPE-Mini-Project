@@ -6,6 +6,5 @@ echo "This is the secret: $SSH_PASSWORD"
 
 echo "ansible_ssh_pass=$SSH_PASSWORD" >> /hosts
 echo "ansible_become_pass=$SSH_PASSWORD" >> /hosts
-ssh-copy-id localhost
 
 ansible-playbook ansible/playbook.yml --user ubuntu
