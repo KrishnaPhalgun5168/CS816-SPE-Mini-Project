@@ -37,7 +37,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: krishnaphalgun5168/CS816-SPE-Mini-Project:latest
+          tags: krishnaphalgun5168/cs816-spe-mini-project:latest
 
       - name: Step 05 - Digest Image
         run: echo ${{ steps.docker_build.outputs.digest }}
