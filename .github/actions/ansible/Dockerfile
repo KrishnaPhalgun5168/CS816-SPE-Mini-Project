@@ -7,4 +7,6 @@ RUN apk add python3 py3-pip openssh-client sshpass
 RUN pip3 install --upgrade paramiko
 RUN pip3 install docker
 
+COPY entrypoint.sh /entrypoint.sh
+
 CMD ["sh", "/entrypoint.sh"]
