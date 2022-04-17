@@ -3,5 +3,12 @@
   become: true
 
   tasks:
-    - name: Hello World
-      ping: 
+    - name: Task 01 - stop previous version docker
+      shell: docker stop cs816-spe-mini-project
+    - name: Task 02 - remove stopped container
+      shell: docker rm -f cs816-spe-mini-project
+    - name: Task 03 - remove docker images
+      shell: docker image rm -f krishnaphalgun5168/cs816-spe-mini-project:latest
+
+    - name: Task 04 - create docker image
+      shell: docker run -d -p 80:80 --name cs816-spe-mini-project krishnaphalgun5168/cs816-spe-mini-project:latest
