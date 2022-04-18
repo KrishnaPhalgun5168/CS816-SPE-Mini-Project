@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { log, pow, sqrt, gamma } from 'mathjs';
+import { WebService } from '../services/web.service';
 
 @Component({
   selector: 'app-calculator',
@@ -9,14 +10,14 @@ import { log, pow, sqrt, gamma } from 'mathjs';
 export class CalculatorComponent implements OnInit {
   input: string = '';
 
-  constructor() {
+  constructor(public webService: WebService) {
     this.input = '';
   }
 
   ngOnInit(): void {}
 
   pressNum(num: string) {
-    console.log("Pressed Number - ", num);
+    console.log('Pressed Number - ', num);
     if (num == '.') {
       if (this.input != '') {
         if (this.input.indexOf('.') >= 0) return;
@@ -31,7 +32,21 @@ export class CalculatorComponent implements OnInit {
   }
 
   pressOperator(op: string) {
-    console.log("Pressed Operator - ", op);
+    console.log('Pressed Operator - ', op);
+    let operator = 'Null Operator';
+    if (op == '^') {
+      operator = 'Power Operator';
+    } else if (op == '√') {
+      operator = 'Square Root Operator';
+    } else if (op == '!') {
+      operator = 'Factorial Operator';
+    } else if (op == 'ln') {
+      operator = 'Logarithmic Operator';
+    }
+    let response = {
+      function_type: operator,
+    };
+    this.webService.elkStackData(response);
     if (this.input != '' && this.operator() == '') {
       if (op == '^') {
         this.input += '^';
@@ -66,18 +81,18 @@ export class CalculatorComponent implements OnInit {
 
   getAnswer() {
     this.input = this.calcAnswer('=');
-    console.log("Display - ", this.input);
+    console.log('Display - ', this.input);
   }
 
   clear() {
-    console.log("Backspace");
+    console.log('Backspace');
     if (this.input != '') {
       this.input = this.input.slice(0, this.input.length - 1);
     }
   }
 
   allClear() {
-    console.log("Clear Display");
+    console.log('Clear Display');
     this.input = '';
   }
 }
