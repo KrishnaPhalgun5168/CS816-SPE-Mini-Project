@@ -16,6 +16,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {}
 
   pressNum(num: string) {
+    console.log("Pressed Number - ", num);
     if (num == '.') {
       if (this.input != '') {
         if (this.input.indexOf('.') >= 0) return;
@@ -30,6 +31,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   pressOperator(op: string) {
+    console.log("Pressed Operator - ", op);
     if (this.input != '' && this.operator() == '') {
       if (op == '^') {
         this.input += '^';
@@ -64,15 +66,18 @@ export class CalculatorComponent implements OnInit {
 
   getAnswer() {
     this.input = this.calcAnswer('=');
+    console.log("Display - ", this.input);
   }
 
   clear() {
+    console.log("Backspace");
     if (this.input != '') {
       this.input = this.input.slice(0, this.input.length - 1);
     }
   }
 
   allClear() {
+    console.log("Clear Display");
     this.input = '';
   }
 }
