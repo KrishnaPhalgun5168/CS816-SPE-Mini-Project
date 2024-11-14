@@ -4,5 +4,5 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 
-FROM nginx:alpine
+FROM nginx:1.27.2-alpine3.20
 COPY --from=node /app/dist/sci-calculator /usr/share/nginx/html
